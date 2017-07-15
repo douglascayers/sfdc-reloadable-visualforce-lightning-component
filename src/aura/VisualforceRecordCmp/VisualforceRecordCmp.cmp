@@ -5,6 +5,17 @@
  -->
 <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
 
+    <!-- Custom attributes for configuring embedded Visualforce -->
+
+    <aura:attribute name="vfPageName" type="String"
+                    description="Name of the Visualforce page to load in the iframe."/>
+
+    <aura:attribute name="vfPageHeight" type="Integer"
+                    default="200"
+                    description="Height of the iframe in pixels."/>
+
+    <!-- Standard attributes for Lightning Data Service -->
+
     <aura:attribute name="recordId" type="String"
                     description="The ID of the record to be displayed. Provided by force:hasRecordId interface."/>
 
@@ -17,13 +28,7 @@
     <aura:attribute name="recordError" type="String"
                     description="An error message bound to force:recordData. Managed by force:recordData component."/>
 
-    <aura:attribute name="vfPageName" type="String"
-                    description="Name of the Visualforce page to load in the iframe."/>
-
-    <aura:attribute name="vfPageHeight" type="Integer"
-                    default="200"
-                    description="Height of the iframe in pixels."/>
-
+    <!-- we only use this for its `recordUpdated` event mechanism -->
     <force:recordData aura:id="record"
                       layoutType="FULL"
                       recordId="{!v.recordId}"
@@ -32,6 +37,8 @@
                       targetFields="{!v.simpleRecord}"
                       recordUpdated="{!c.handleRecordUpdated}"
                       mode="VIEW"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
     <!-- Markup -->
 

@@ -1,12 +1,33 @@
 <apex:page>
 
     <!--
-        Change "Demo_Account_Flow" to the name of your desired flow.
-        Change the "accountId" parameter to the name of an input text variable in your flow.
-        The "finishLocation" is set to loop back on itself rather than user seeing "Flow Finished" message.
+        1. At line 13, change "Demo_Account_Flow" to the name of your desired flow.
+        2. At line 14, change the "accountId" parameter to the name of an input text variable in your flow.
+        3. Create as many of these Visualforce Pages that embed a Flow as you need.
+
+        Note that the "finishLocation" is set to loop back on itself and sets a new parameter 'finish=true'.
+        This is important because the script at bottom of this page uses that to know it needs to broadcast
+        that the rest of the components on the page need to refresh.
      -->
-    <flow:interview name="Demo_Account_Flow" finishLocation="/apex/{!$CurrentPage.name}?id={!$CurrentPage.parameters.id}">
+
+    <flow:interview name="Demo_Account_Flow" finishLocation="/apex/{!$CurrentPage.name}?id={!$CurrentPage.parameters.id}&finish=true">
         <apex:param name="accountId" value="{!$CurrentPage.parameters.id}"/>
     </flow:interview>
+
+    <!--
+        The below script notifies the parent Lightning Component that flow has finished
+        and that the rest of the page needs to refresh to pick up latest changes.
+     -->
+
+    <script>
+
+        if ( '{!$CurrentPage.parameters.finish}' === 'true' ) {
+            parent.postMessage( JSON.stringify({
+                'recordId'  : '{!$CurrentPage.parameters.id}',
+                'action' : 'refresh'
+            }), "*" );
+        }
+
+    </script>
 
 </apex:page>
