@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>DemoAccountFlowPage</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>VisualforceRecordCmp</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Refresh_Flow_Account_Page</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Demo_Account_Flow-1</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Demo_Account_Flow</members>
+        <name>FlowDefinition</name>
+    </types>
+    <version>40.0</version>
+</Package>

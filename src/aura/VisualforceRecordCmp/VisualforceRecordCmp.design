@@ -1,0 +1,12 @@
+<design:component label="Visualforce">
+
+    <design:attribute label="Visualforce Page"
+                      name="vfPageName"
+                      description="Name of the Visualforce page that embeds your desired Flow."/>
+
+    <design:attribute label="Height (pixels)"
+                      name="vfPageHeight"
+                      default="200"
+                      description="Height of the component on the page in pixels."/>
+
+</design:component>

@@ -1,0 +1,12 @@
+<apex:page>
+
+    <!--
+        Change "Demo_Account_Flow" to the name of your desired flow.
+        Change the "accountId" parameter to the name of an input text variable in your flow.
+        The "finishLocation" is set to loop back on itself rather than user seeing "Flow Finished" message.
+     -->
+    <flow:interview name="Demo_Account_Flow" finishLocation="/apex/{!$CurrentPage.name}?id={!$CurrentPage.parameters.id}">
+        <apex:param name="accountId" value="{!$CurrentPage.parameters.id}"/>
+    </flow:interview>
+
+</apex:page>

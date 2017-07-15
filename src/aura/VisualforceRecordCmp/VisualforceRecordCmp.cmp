@@ -1,0 +1,73 @@
+<!--
+	Lightning Component for displaying Visualforce pages in Lightning Record Pages.
+	Unlike the standard Visualforce component for App Builder, this one uses Lightning Data Service.
+	When the record changes then this component refreshes to pick up the update.
+ -->
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+
+    <aura:attribute name="recordId" type="String"
+                    description="The ID of the record to be displayed. Provided by force:hasRecordId interface."/>
+
+    <aura:attribute name="record" type="Object"
+                    description="The record object to be displayed. Managed by force:recordData component."/>
+
+    <aura:attribute name="simpleRecord" type="Object"
+                    description="A simplified view record object to be displayed. Managed by force:recordData component."/>
+
+    <aura:attribute name="recordError" type="String"
+                    description="An error message bound to force:recordData. Managed by force:recordData component."/>
+
+    <aura:attribute name="vfPageName" type="String"
+                    description="Name of the Visualforce page to load in the iframe."/>
+
+    <aura:attribute name="vfPageHeight" type="Integer"
+                    default="200"
+                    description="Height of the iframe in pixels."/>
+
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      mode="VIEW"/>
+
+    <!-- Markup -->
+
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+
+        <aura:set attribute="else">
+
+            <aura:if isTrue="{!(not(empty(v.vfPageName)))}">
+
+                <iframe id="flowFrame"
+                        src="{!'/apex/' + v.vfPageName + '?id=' + v.recordId}"
+                        height="{!v.vfPageHeight + 'px'}"
+                        width="100%"
+                        frameborder="0">
+                </iframe>
+
+                <aura:set attribute="else">
+
+                    <div class="recordError">
+                        <ui:message title="Warning" severity="warning" closable="true">
+                            Please specify a Visualforce Page.
+                        </ui:message>
+                    </div>
+
+                </aura:set>
+
+            </aura:if>
+
+        </aura:set>
+
+    </aura:if>
+
+</aura:component>
