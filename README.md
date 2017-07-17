@@ -34,7 +34,7 @@ Yeah, me neither, so let's automate it!
 Demo Video
 ----------
 
-[![video](images/youtube-thumbnail.png)](https://youtu.be/rjCE1QpPWx4)
+[![video](images/youtube-video-thumbnail.png)](https://youtu.be/rjCE1QpPWx4)
 
 
 Installation
