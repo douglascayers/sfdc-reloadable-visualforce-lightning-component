@@ -31,6 +31,11 @@ But who has time to do such trivial things like refreshing their browser page?!?
 ["Not I", said the Cat.](https://en.wikipedia.org/wiki/The_Little_Red_Hen)
 Yeah, me neither, so let's automate it!
 
+Demo Video
+----------
+
+[![video](images/youtube-thumbnail.png)](https://youtu.be/rjCE1QpPWx4)
+
 
 Installation
 ------------
