@@ -70,6 +70,11 @@ Getting Started
 9. Edit and save the account record and notice your Flow refreshes too!
 10. Click the Finish button on your Flow and notice the rest of the page refreshes too!
 
+---
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/SXSxcXEh3FwrvhNp1rxuugLP/DouglasCAyers/sfdc-reloadable-visualforce-lightning-component'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/SXSxcXEh3FwrvhNp1rxuugLP/DouglasCAyers/sfdc-reloadable-visualforce-lightning-component.svg' /></a>
+
+---
 
 Customizations
 --------------
