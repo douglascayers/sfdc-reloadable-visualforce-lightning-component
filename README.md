@@ -1,3 +1,10 @@
+New Project Available
+---------------------
+
+Specifically for helping keep Flows embedded on Lightning Pages in sync on the page, I've developed a new solution [Reloadable Flow Component](https://github.com/DouglasCAyers/sfdc-reloadable-flow-component) based on new features available in [Winter '18](https://releasenotes.docs.salesforce.com/en-us/winter18/release-notes/rn_forcecom_flow_component.htm).
+
+---
+
 Reloadable Visualforce Lightning Component
 ==========================================
 
