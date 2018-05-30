@@ -4,14 +4,4 @@
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <label>DemoAccountFlowPage</label>
-    <packageVersions>
-        <majorNumber>2</majorNumber>
-        <minorNumber>8</minorNumber>
-        <namespace>dlrs</namespace>
-    </packageVersions>
-    <packageVersions>
-        <majorNumber>1</majorNumber>
-        <minorNumber>7</minorNumber>
-        <namespace>sf_com_apps</namespace>
-    </packageVersions>
 </ApexPage>
